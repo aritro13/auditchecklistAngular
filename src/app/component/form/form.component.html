@@ -1,0 +1,54 @@
+<!-- {{formDataSet.section1}} -->
+<mat-tab-group>
+    <mat-tab label = "QUESTIONS">
+        <div class="container">
+            <div [hidden]="submitted">
+                <h1>Audit Checklist</h1>
+                <form (ngSubmit)="onSubmit()" #auditForm = "ngForm">
+                    {{diagnostic}}
+
+                    <div class="form-group">
+                        <label for="description1">{{this.formDataSet[0].section1[0].header}}</label>
+                        <input type="text" class="form-control" id="description1"
+                               required
+                               [(ngModel)]="this.formDataSet[0].section1[0].description" name="description1">
+                      </div>
+                      <!-- <tr *ngFor="let d of this.formDataSet; let i = index" >
+                        {{d | section1}}
+                      </tr> -->
+                      <div class="form-group">
+                        <label for="response1">{{this.formDataSet[0].section1[0].question1}}</label>
+                        <input type="text"  class="form-control" id="response1"
+                               [(ngModel)]="this.formDataSet[0].section1[0].response1" name="response1">
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="power">{{this.formDataSet[0].section1[0].question2}}</label>
+                        <!-- <select class="form-control"  id="power"
+                                required
+                                [(ngModel)]="model.power" name="power">
+                          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+                        </select> -->
+                        <input type="text"  class="form-control" id="response2"
+                               [(ngModel)]="this.formDataSet[0].section1[0].response2" name="response2">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="response3">{{this.formDataSet[0].section1[0].question3}}</label>
+                        <input type="text"  class="form-control" id="response3"
+                               [(ngModel)]="this.formDataSet[0].section1[0].response3" name="response3">
+                      </div>
+                      <div class="form-group">
+                        <label for="response4">{{this.formDataSet[0].section1[0].question4}}</label>
+                        <input type="text"  class="form-control" id="response4"
+                               [(ngModel)]="this.formDataSet[0].section1[0].response4" name="response4">
+                      </div>
+                      <button type="submit" class="btn btn-success" [disabled]="!auditForm.form.valid">Submit</button>
+                </form>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab  label = "RESPONSE">
+      
+    </mat-tab>
+</mat-tab-group>
